@@ -70,10 +70,6 @@ stdenv.mkDerivation {
   dontWrapQtApps = true;
 
   postInstall = ''
-    wrapProgramShell $out/bin/hyprland-share-picker \
-      "''${qtWrapperArgs[@]}" \
-      --prefix PATH ":" ${lib.makeBinPath [slurp hyprland]}
-
     wrapProgramShell $out/libexec/xdg-desktop-portal-hyprland \
       --prefix PATH ":" ${lib.makeBinPath [(placeholder "out")]}
   '';
