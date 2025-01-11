@@ -66,4 +66,3 @@ inc = include_directories('.', 'protocols')
 
 subdir('protocols')
 subdir('src')
-subdir('hyprland-share-picker')

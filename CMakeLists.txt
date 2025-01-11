@@ -49,7 +49,6 @@ add_compile_options(
 
 # dependencies
 message(STATUS "Checking deps...")
-add_subdirectory(hyprland-share-picker)
 
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
@@ -133,7 +132,6 @@ protocolnew("${HYPRLAND_PROTOCOLS}/protocols" "hyprland-toplevel-export-v1"
 protocolnew("stable/linux-dmabuf" "linux-dmabuf-v1" false)
 
 # Installation
-install(TARGETS hyprland-share-picker)
 install(TARGETS xdg-desktop-portal-hyprland
         DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})
 
