@@ -39,10 +39,13 @@ std::string buildWindowList() {
 }
 
 SSelectionData promptForScreencopySelection() {
-    SSelectionData      data;
+    SSelectionData data;
     data.type = TYPE_OUTPUT;
     data.output = "DP-2";
     data.allowToken = true;
+
+    system("sed -i 's/bitdepth,10/bitdepth,8/g' /home/pancake/.config/hypr/hyprland.conf");
+    usleep(2000000);
 
     return data;
 }

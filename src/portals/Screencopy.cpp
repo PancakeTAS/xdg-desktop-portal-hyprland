@@ -53,6 +53,9 @@ dbUasv CScreencopyPortal::onCreateSession(sdbus::ObjectPath requestHandle, sdbus
         PSESSION->session.release();
         Debug::log(LOG, "[screencopy] Session destroyed");
 
+        // reset to 10-bit
+        system("sed -i 's/bitdepth,8/bitdepth,10/g' /home/pancake/.config/hypr/hyprland.conf");
+
         // deactivate toplevel so it doesn't listen and waste battery
         g_pPortalManager->m_sHelpers.toplevel->deactivate();
     };
